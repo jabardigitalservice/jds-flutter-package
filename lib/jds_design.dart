@@ -1,4 +1,4 @@
 library jds_design;
 
-export 'typography/header.dart';
+export 'typography/text_theme.dart';
 export 'enums/font.dart';

@@ -40,34 +40,56 @@ class HomePage extends StatelessWidget {
       body: ListView(
         children: <Widget>[
           Container(
-            color: Colors.blue,
+              color: Colors.blue,
               margin: EdgeInsets.only(top: 10.0),
-              child: Text('Heading 1', style: TextStyle().copyWith())),
+              child: Text('Heading 1', style: JDSTextTheme.h1(fontFamily: JDSFont.lora),)),
 
           Container(
               color: Colors.blue,
               margin: EdgeInsets.only(top: 10.0),
-              child: Text('Heading 2', style: JHeader.h2(fontFamily: JFont.lora),)),
+              child: Text('Heading 2', style: JDSTextTheme.h2(fontFamily: JDSFont.lora),)),
 
           Container(
               color: Colors.blue,
               margin: EdgeInsets.only(top: 10.0),
-              child: Text('Heading 3', style: JHeader.h3(fontFamily: JFont.lora),)),
+              child: Text('Heading 3', style: JDSTextTheme.h3(fontFamily: JDSFont.lora),)),
 
           Container(
               color: Colors.blue,
               margin: EdgeInsets.only(top: 10.0),
-              child: Text('Heading 4', style: JHeader.h4(fontFamily: JFont.lora),)),
+              child: Text('Heading 4', style: JDSTextTheme.h4(fontFamily: JDSFont.lora),)),
 
           Container(
               color: Colors.blue,
               margin: EdgeInsets.only(top: 10.0),
-              child: Text('Heading 5', style: JHeader.h5(fontFamily: JFont.lora),)),
+              child: Text('Heading 5', style: JDSTextTheme.h5(fontFamily: JDSFont.lora),)),
 
           Container(
               color: Colors.blue,
               margin: EdgeInsets.only(top: 10.0),
-              child: Text('Heading 6', style: JHeader.h6(fontFamily: JFont.lora),))
+              child: Text('Heading 6', style: JDSTextTheme.h6(fontFamily: JDSFont.lora),)),
+
+           Container(
+             margin: EdgeInsets.only(top: 10.0),
+             child: RichText(
+               text: TextSpan(
+                 children: <TextSpan>[
+                   TextSpan(
+                     text: "You don't have the votes.\n",
+                     style: JDSTextTheme.h6(color: Colors.black.withOpacity(0.6)),
+                   ),
+                   TextSpan(
+                     text: "You don't have the votes!\n",
+                     style: JDSTextTheme.h6(color: Colors.black.withOpacity(0.8)),
+                   ),
+                   TextSpan(
+                     text: "You're gonna need congressional approval and you don't have the votes!\n",
+                     style: JDSTextTheme.h6(color: Colors.black),
+                   ),
+                 ],
+               ),
+             ),
+           )
         ],
       ),
       drawer: Drawer(

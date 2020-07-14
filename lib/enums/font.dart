@@ -1,4 +1,4 @@
-enum JFont {
+enum JDSFont {
   lato,
   roboto,
   lora

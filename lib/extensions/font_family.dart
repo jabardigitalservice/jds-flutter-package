@@ -1,16 +1,16 @@
 import 'package:jds_design/constants/fonts.dart';
 import 'package:jds_design/enums/font.dart';
 
-extension FontFamily on JFont {
+extension FontFamily on JDSFont {
   String get fontFamily {
     switch (this) {
-      case JFont.lato:
+      case JDSFont.lato:
         return Fonts.LATO;
         break;
-      case JFont.lora:
+      case JDSFont.lora:
         return Fonts.LORA;
         break;
-      case JFont.roboto:
+      case JDSFont.roboto:
         return Fonts.ROBOTO;
         break;
       default:
