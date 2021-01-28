@@ -269,4 +269,3 @@ class JDSColors {
   );
   static const int _blueGreyPrimaryValue = 0xFF001B3D;
 }
-

@@ -72,146 +72,118 @@ class JDSTextTheme {
   /// [backgroundColor], property to determine the color to use as the background for the text.
 
   /// Specify the default text styling for headlines 1
-  static h1({JDSFont fontFamily, FontStyle fontStyle, Color color, Color backgroundColor}) {
-    return TextStyle(
-        fontFamily: fontFamily.fontFamily,
-        fontSize: 49.0,
-        height: 1.618,
-        color: color,
-        backgroundColor: backgroundColor,
-        fontStyle: fontStyle,
-        package: 'jds_design');
-  }
+  static const TextStyle h1 = TextStyle(
+      fontFamily: JDSFonts.LATO,
+      fontSize: 49.0,
+      height: 1.618,
+      package: 'jds_design');
 
   /// Use this to specify the default text styling for headlines 2
-  static h2({JDSFont fontFamily, FontStyle fontStyle, Color color, Color backgroundColor}) {
-    return TextStyle(
-        fontFamily: fontFamily.fontFamily,
-        fontSize: 41.0,
-        height: 1.618,
-        color: color,
-        backgroundColor: backgroundColor,
-        fontStyle: fontStyle,
-        package: 'jds_design');
-  }
+  static const TextStyle h2 = TextStyle(
+      fontFamily: JDSFonts.LATO,
+      fontSize: 41.0,
+      height: 1.618,
+      package: 'jds_design');
 
   /// Use this to specify the default text styling for headlines 3
-  static h3({JDSFont fontFamily, FontStyle fontStyle, Color color, Color backgroundColor}) {
-    return TextStyle(
-        fontFamily: fontFamily.fontFamily,
-        fontSize: 34.0,
-        height: 1.618,
-        color: color,
-        backgroundColor: backgroundColor,
-        fontStyle: fontStyle,
-        package: 'jds_design');
-  }
+  static const TextStyle h3 = TextStyle(
+      fontFamily: JDSFonts.LATO,
+      fontSize: 34.0,
+      height: 1.618,
+      package: 'jds_design');
 
   /// Specify the default text styling for headlines 4
-  static h4({JDSFont fontFamily, FontStyle fontStyle, Color color, Color backgroundColor}) {
-    return TextStyle(
-        fontFamily: fontFamily.fontFamily,
-        fontSize: 28.0,
-        height: 1.618,
-        color: color,
-        backgroundColor: backgroundColor,
-        fontStyle: fontStyle,
-        package: 'jds_design');
-  }
+  static const TextStyle h4 = TextStyle(
+      fontFamily: JDSFonts.LATO,
+      fontSize: 28.0,
+      height: 1.618,
+      package: 'jds_design');
 
   /// Specify the default text styling for headlines 5
-  static h5({JDSFont fontFamily, FontStyle fontStyle, Color color, Color backgroundColor}) {
-    return TextStyle(
-        fontFamily: fontFamily.fontFamily,
-        fontSize: 23.0,
-        height: 1.618,
-        color: color,
-        backgroundColor: backgroundColor,
-        fontStyle: fontStyle,
-        package: 'jds_design');
-  }
+  static const TextStyle h5 = TextStyle(
+      fontFamily: JDSFonts.LATO,
+      fontSize: 23.0,
+      height: 1.618,
+      package: 'jds_design');
 
   /// Specify the default text styling for headlines 6
-  static h6({JDSFont fontFamily, FontStyle fontStyle, Color color, Color backgroundColor}) {
-    return TextStyle(
-        fontFamily: fontFamily.fontFamily,
-        fontSize: 19.0,
-        height: 1.618,
-        color: color,
-        backgroundColor: backgroundColor,
-        fontStyle: fontStyle,
-        package: 'jds_design');
-  }
+  static const TextStyle h6 = TextStyle(
+      fontFamily: JDSFonts.LATO,
+      fontSize: 19.0,
+      height: 1.618,
+      package: 'jds_design');
 
   /// Specify the default text styling for subtitle 2
-  static subtitle1({JDSFont fontFamily, FontStyle fontStyle, Color color, Color backgroundColor}) {
-    return TextStyle(
-        fontFamily: fontFamily.fontFamily,
-        fontSize: 16.0,
-        height: 1.618,
-        color: color,
-        backgroundColor: backgroundColor,
-        fontStyle: fontStyle,
-        package: 'jds_design');
-  }
+  static const TextStyle subtitle1 = TextStyle(
+      fontFamily: JDSFonts.ROBOTO,
+      fontSize: 16.0,
+      height: 1.618,
+      package: 'jds_design');
 
   /// Specify the default text styling for subtitle 2
-  static subtitle2({JDSFont fontFamily, FontStyle fontStyle, Color color, Color backgroundColor}) {
-    return TextStyle(
-        fontFamily: fontFamily.fontFamily,
-        fontSize: 13.0,
-        height: 1.618,
-        color: color,
-        backgroundColor: backgroundColor,
-        fontStyle: fontStyle,
-        package: 'jds_design');
-  }
+  static const TextStyle subtitle2 = TextStyle(
+      fontFamily: JDSFonts.ROBOTO,
+      fontSize: 14.0,
+      height: 1.618,
+      package: 'jds_design');
 
   /// Specify the default text styling for body 1
-  static body1({FontStyle fontStyle, Color color, Color backgroundColor}) {
-    return TextStyle(
-        fontFamily: Fonts.LATO,
-        fontSize: 16.0,
-        height: 1.618,
-        color: color,
-        backgroundColor: backgroundColor,
-        fontStyle: fontStyle,
-        package: 'jds_design');
-  }
+  static const TextStyle body1 = TextStyle(
+      fontFamily: JDSFonts.LATO,
+      fontSize: 16.0,
+      height: 1.618,
+      package: 'jds_design');
 
   /// Specify the default text styling for body 2
-  static body2({FontStyle fontStyle, Color color, Color backgroundColor}) {
-    return TextStyle(
-        fontFamily: Fonts.LATO,
-        fontSize: 13.0,
-        height: 1.618,
-        color: color,
-        backgroundColor: backgroundColor,
-        fontStyle: fontStyle,
-        package: 'jds_design');
-  }
+  static const TextStyle body2 = TextStyle(
+      fontFamily: JDSFonts.LATO,
+      fontSize: 14.0,
+      height: 1.618,
+      package: 'jds_design');
+
+  /// Specify the default text styling for button 1
+  static const TextStyle button1 = TextStyle(
+      fontFamily: JDSFonts.LATO,
+      fontSize: 16.0,
+      height: 1.618,
+      package: 'jds_design');
+
+  /// Specify the default text styling for button 2
+  static const TextStyle button2 = TextStyle(
+      fontFamily: JDSFonts.LATO,
+      fontSize: 14.0,
+      height: 1.618,
+      package: 'jds_design');
 
   /// Specify the default text styling for endnote
-  static endNote({FontStyle fontStyle, Color color, Color backgroundColor}) {
-    return TextStyle(
-        fontFamily: Fonts.LATO,
-        fontSize: 11.0,
-        height: 1.618,
-        color: color,
-        backgroundColor: backgroundColor,
-        fontStyle: fontStyle,
-        package: 'jds_design');
-  }
+  static const TextStyle endNote = TextStyle(
+      fontFamily: JDSFonts.LATO,
+      fontSize: 12.0,
+      height: 1.618,
+      package: 'jds_design');
 
   /// Specify the default text styling for footnote
-  static footNote({FontStyle fontStyle, Color color, Color backgroundColor}) {
-    return TextStyle(
-        fontFamily: Fonts.LATO,
-        fontSize: 11.0,
-        height: 1.618,
-        color: color,
-        backgroundColor: backgroundColor,
-        fontStyle: fontStyle,
-        package: 'jds_design');
-  }
+  static const TextStyle footNote = TextStyle(
+      fontFamily: JDSFonts.LATO,
+      fontSize: 11.0,
+      height: 1.618,
+      package: 'jds_design');
+
+  /// Specify the default text styling for hyperlink 1
+  static const TextStyle hyperlink1 = TextStyle(
+      fontFamily: JDSFonts.LATO,
+      fontSize: 16.0,
+      fontWeight: FontWeight.bold,
+      decoration: TextDecoration.underline,
+      height: 1.618,
+      package: 'jds_design');
+
+  /// Specify the default text styling for hyperlink 2
+  static const TextStyle hyperlink2 = TextStyle(
+      fontFamily: JDSFonts.LATO,
+      fontSize: 14.0,
+      fontWeight: FontWeight.bold,
+      decoration: TextDecoration.underline,
+      height: 1.618,
+      package: 'jds_design');
 }
