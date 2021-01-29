@@ -103,24 +103,19 @@ class HomePage extends StatelessWidget {
               ),
             ),
           ),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 40),
-            child: JdsTextButton(
-              title: 'primary',
-              onPressed: () {},
-              color: Colors.white,
-              background: JDSColors.green[700],
-            ),
+          Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                child: JdsTextButton(
+                  title: 'primary',
+                  onPressed: () {},
+                  color: Colors.white,
+                  background: JDSColors.green[700],
+                ),
+              ),
+            ],
           ),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 40),
-            child: JdsTextButton(
-              title: 'primary',
-              onPressed: () {},
-              color: Colors.white,
-              background: JDSColors.red[700],
-            ),
-          )
         ],
       ),
       drawer: Drawer(
