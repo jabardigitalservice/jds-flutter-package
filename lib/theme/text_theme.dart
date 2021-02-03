@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:jds_design/constants/fonts.dart';
-import 'package:jds_design/enums/font.dart';
-import 'package:jds_design/extensions/font_family.dart';
-import 'package:jds_design/jds_design.dart';
 
 /// Define the default JDS TextTheme [typography]. Use this to specify the default
 /// text styling for headlines, titles, bodies of text, and more.

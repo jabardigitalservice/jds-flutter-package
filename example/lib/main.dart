@@ -82,39 +82,105 @@ class HomePage extends StatelessWidget {
                 style: JDSTextTheme.h6,
               )),
           Container(
+            color: JDSColors.black,
             margin: EdgeInsets.only(top: 10.0),
             child: RichText(
               text: TextSpan(
                 children: <TextSpan>[
                   TextSpan(
                     text: "You don't have the votes.\n",
-                    style: JDSTextTheme.h6,
+                    style: JDSTextTheme.body1,
                   ),
                   TextSpan(
                     text: "You don't have the votes!\n",
-                    style: JDSTextTheme.h6,
+                    style: JDSTextTheme.body2,
                   ),
                   TextSpan(
                     text:
                         "You're gonna need congressional approval and you don't have the votes!\n",
-                    style: JDSTextTheme.h6,
+                    style: JDSTextTheme.endNote,
                   ),
                 ],
               ),
             ),
           ),
-          Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Container(
-                child: JdsTextButton(
-                  title: 'primary',
-                  onPressed: () {},
-                  color: Colors.white,
-                  background: JDSColors.green[700],
+          SizedBox(height: 20),
+          Text(
+            'Button filled',
+            textAlign: TextAlign.center,
+            style: JDSTextTheme.h6,
+          ),
+          Center(
+            child: Wrap(
+              children: [
+                Container(
+                  child: JDSButton(
+                    title: 'Primary',
+                    onPressed: () {},
+                    background: JDSColors.green[700],
+                  ),
                 ),
-              ),
-            ],
+                SizedBox(width: 10),
+                Container(
+                  child: JDSButton(
+                    title: 'danger',
+                    onPressed: () {},
+                    background: JDSColors.red[700],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(height: 20),
+          Text(
+            'Button Outlined',
+            textAlign: TextAlign.center,
+            style: JDSTextTheme.h6,
+          ),
+          Center(
+            child: Wrap(
+              children: [
+                Container(
+                  child: JDSButton.outline(
+                    title: 'primary',
+                    borderColor: JDSColors.green[700],
+                    onPressed: () {},
+                    color: JDSColors.green[700],
+                    background: JDSColors.white,
+                  ),
+                ),
+                SizedBox(width: 10),
+                Container(
+                  child: JDSButton.outline(
+                    borderColor: JDSColors.green[700],
+                    trailing: Icon(
+                      Icons.supervisor_account,
+                      size: 20,
+                      color: JDSColors.green[700],
+                    ),
+                    title: 'danger',
+                    onPressed: () {},
+                    color: JDSColors.green[700],
+                    background: JDSColors.white,
+                  ),
+                ),
+                SizedBox(width: 10),
+                Container(
+                  child: JDSButton.outline(
+                    borderColor: JDSColors.green[700],
+                    color: JDSColors.green[700],
+                    leading: Icon(
+                      Icons.email,
+                      size: 20,
+                      color: JDSColors.green[700],
+                    ),
+                    title: 'danger',
+                    onPressed: () {},
+                    background: JDSColors.green[50],
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),
