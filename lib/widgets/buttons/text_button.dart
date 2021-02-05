@@ -23,6 +23,7 @@ class JDSButton extends StatelessWidget {
   /// button type
   final ButtonType buttonType;
   final String title;
+  final Widget icon;
   final VoidCallback onPressed;
 
   /// default [true]
@@ -50,6 +51,7 @@ class JDSButton extends StatelessWidget {
     this.borderColor = Colors.transparent,
     this.leading,
     this.trailing,
+    this.icon,
   }) : super(key: key);
 
   /// default button filled
@@ -63,7 +65,23 @@ class JDSButton extends StatelessWidget {
     this.background = JDSColors.green,
     this.leading,
     this.trailing,
+    this.icon,
   })  : this.buttonType = ButtonType.outline,
+        super(key: key);
+
+  /// default button filled
+  const JDSButton.icon({
+    Key key,
+    @required this.icon,
+    @required this.onPressed,
+    this.borderColor = Colors.transparent,
+    this.isEnabled = true,
+    this.color = JDSColors.white,
+    this.background = JDSColors.green,
+    this.leading,
+    this.trailing,
+    this.title,
+  })  : this.buttonType = ButtonType.icon,
         super(key: key);
 
   @override
@@ -85,21 +103,25 @@ class JDSButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
         side: BorderSide(color: borderColor),
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Padding(padding: const EdgeInsets.only(right: 8), child: leading),
-          Text(
-            title,
-            textAlign: TextAlign.center,
-            style: JDSTextTheme.button2
-                .copyWith(fontWeight: FontWeight.bold, color: color),
-          ),
-          Padding(padding: const EdgeInsets.only(left: 8), child: trailing),
-        ],
-      ),
+      child: icon == null
+          ? Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Padding(
+                    padding: const EdgeInsets.only(right: 8), child: leading),
+                Text(
+                  title,
+                  textAlign: TextAlign.center,
+                  style: JDSTextTheme.button2
+                      .copyWith(fontWeight: FontWeight.bold, color: color),
+                ),
+                Padding(
+                    padding: const EdgeInsets.only(left: 8), child: trailing),
+              ],
+            )
+          : icon,
     );
   }
 }
