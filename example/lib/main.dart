@@ -182,6 +182,45 @@ class HomePage extends StatelessWidget {
               ],
             ),
           ),
+          SizedBox(height: 20),
+          Text(
+            'Button icon',
+            textAlign: TextAlign.center,
+            style: JDSTextTheme.h6,
+          ),
+          Center(
+            child: Wrap(
+              children: [
+                Container(
+                  child: JDSButton.icon(
+                    color: Colors.black,
+                    icon: Icon(
+                      Icons.email,
+                      size: 20,
+                      color: JDSColors.white,
+                    ),
+                    onPressed: () {},
+                    // background: JDSColors.green[700],
+                  ),
+                ),
+                SizedBox(width: 10),
+                Container(
+                  child: JDSButton.icon(
+                    icon: Icon(
+                      Icons.accessibility,
+                      size: 20,
+                      color: JDSColors.green[700],
+                    ),
+                    background: JDSColors.green[50],
+                    borderColor: JDSColors.green[700],
+                    onPressed: () {},
+                    // background: JDSColors.green[700],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(height: 50),
         ],
       ),
       drawer: Drawer(
