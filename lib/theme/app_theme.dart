@@ -13,6 +13,7 @@ class JDSTheme {
   /// the light theme
   static final ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
+    primaryColor: _lightPrimaryColor,
     // fontFamily: font1,
     floatingActionButtonTheme: FloatingActionButtonThemeData(
       backgroundColor: _lightPrimaryColor,

@@ -93,13 +93,13 @@ class JDSColors {
       300: Color(0xFF7BC68A),
       400: Color(0xFF5EBA71),
       500: Color(0xFF399F4F),
-      600: Color(_greenPrimaryValue),
-      700: Color(0xFF2F8D44),
+      600: Color(0xFF41AE59),
+      700: Color(_greenPrimaryValue),
       800: Color(0xFF267C39),
       900: Color(0xFF155D27),
     },
   );
-  static const int _greenPrimaryValue = 0xFF41AE59;
+  static const int _greenPrimaryValue = 0xFF2F8D44;
 
   /// The blue primary color and swatch.
   ///
@@ -176,14 +176,14 @@ class JDSColors {
       200: Color(0xFFEF9A9A),
       300: Color(0xFFE57373),
       400: Color(0xFFEF5350),
-      500: Color(_redPrimaryValue),
+      500: Color(0xFFF44336),
       600: Color(0xFFE53935),
-      700: Color(0xFFD32F2F),
+      700: Color(_redPrimaryValue),
       800: Color(0xFFC62828),
       900: Color(0xFFB71C1C),
     },
   );
-  static const int _redPrimaryValue = 0xFFF44336;
+  static const int _redPrimaryValue = 0xFFD32F2F;
 
   /// The purple primary color and swatch.
   ///

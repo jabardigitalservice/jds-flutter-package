@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:jds_design/constants/fonts.dart';
 import 'package:jds_design/jds_design.dart';
 
 void main() {
@@ -111,24 +110,27 @@ class HomePage extends StatelessWidget {
             style: JDSTextTheme.h6,
           ),
           Center(
-            child: Wrap(
-              children: [
-                Container(
-                  child: JDSButton(
-                    title: 'Primary',
-                    onPressed: () {},
-                    background: JDSColors.green[700],
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Wrap(
+                children: [
+                  Container(
+                    child: JDSButton(
+                      title: 'Primary',
+                      variant: Variant.primary,
+                      onPressed: () {},
+                    ),
                   ),
-                ),
-                SizedBox(width: 10),
-                Container(
-                  child: JDSButton(
-                    title: 'danger',
-                    onPressed: () {},
-                    background: JDSColors.red[700],
+                  SizedBox(width: 10),
+                  Container(
+                    child: JDSButton(
+                      title: 'danger',
+                      variant: Variant.danger,
+                      onPressed: () {},
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
           SizedBox(height: 20),
@@ -138,48 +140,46 @@ class HomePage extends StatelessWidget {
             style: JDSTextTheme.h6,
           ),
           Center(
-            child: Wrap(
-              children: [
-                Container(
-                  child: JDSButton.outline(
-                    title: 'primary',
-                    borderColor: JDSColors.green[700],
-                    onPressed: () {},
-                    color: JDSColors.green[700],
-                    background: JDSColors.white,
-                  ),
-                ),
-                SizedBox(width: 10),
-                Container(
-                  child: JDSButton.outline(
-                    borderColor: JDSColors.green[700],
-                    trailing: Icon(
-                      Icons.supervisor_account,
-                      size: 20,
-                      color: JDSColors.green[700],
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Wrap(
+                children: [
+                  Container(
+                    child: JDSButton.outline(
+                      title: 'secondary',
+                      variant: Variant.secondary,
+                      onPressed: () {},
                     ),
-                    title: 'danger',
-                    onPressed: () {},
-                    color: JDSColors.green[700],
-                    background: JDSColors.white,
                   ),
-                ),
-                SizedBox(width: 10),
-                Container(
-                  child: JDSButton.outline(
-                    borderColor: JDSColors.green[700],
-                    color: JDSColors.green[700],
-                    leading: Icon(
-                      Icons.email,
-                      size: 20,
-                      color: JDSColors.green[700],
+                  SizedBox(width: 10),
+                  Container(
+                    child: JDSButton.outline(
+                      variant: Variant.secondary,
+                      trailing: Icon(
+                        Icons.supervisor_account,
+                        size: 20,
+                        color: JDSColors.green[700],
+                      ),
+                      title: 'danger',
+                      onPressed: () {},
+                      background: JDSColors.white,
                     ),
-                    title: 'danger',
-                    onPressed: () {},
-                    background: JDSColors.green[50],
                   ),
-                ),
-              ],
+                  SizedBox(width: 10),
+                  Container(
+                    child: JDSButton.outline(
+                      variant: Variant.secondary,
+                      leading: Icon(
+                        Icons.email,
+                        size: 20,
+                        color: JDSColors.green[700],
+                      ),
+                      title: 'danger',
+                      onPressed: () {},
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           SizedBox(height: 20),
@@ -189,35 +189,73 @@ class HomePage extends StatelessWidget {
             style: JDSTextTheme.h6,
           ),
           Center(
-            child: Wrap(
-              children: [
-                Container(
-                  child: JDSButton.icon(
-                    color: Colors.black,
-                    icon: Icon(
-                      Icons.email,
-                      size: 20,
-                      color: JDSColors.white,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Wrap(
+                children: [
+                  Container(
+                    child: JDSButton.icon(
+                      variant: Variant.primary,
+                      icon: Icon(
+                        Icons.email,
+                        size: 20,
+                        color: JDSColors.white,
+                      ),
+                      onPressed: () {},
+                      // background: JDSColors.green[700],
                     ),
-                    onPressed: () {},
-                    // background: JDSColors.green[700],
                   ),
-                ),
-                SizedBox(width: 10),
-                Container(
-                  child: JDSButton.icon(
-                    icon: Icon(
-                      Icons.accessibility,
-                      size: 20,
-                      color: JDSColors.green[700],
+                  SizedBox(width: 10),
+                  Container(
+                    child: JDSButton.icon(
+                      variant: Variant.danger,
+                      icon: Icon(
+                        Icons.accessibility,
+                        size: 20,
+                        color: JDSColors.white,
+                      ),
+                      onPressed: () {},
+                      // background: JDSColors.green[700],
                     ),
-                    background: JDSColors.green[50],
-                    borderColor: JDSColors.green[700],
-                    onPressed: () {},
-                    // background: JDSColors.green[700],
                   ),
-                ),
-              ],
+                ],
+              ),
+            ),
+          ),
+          SizedBox(height: 20),
+          Text(
+            'Button Teriary',
+            textAlign: TextAlign.center,
+            style: JDSTextTheme.h6,
+          ),
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Wrap(
+                children: [
+                  Container(
+                    child: JDSButton(
+                      title: 'Tertiary',
+                      variant: Variant.tertiary,
+                      onPressed: () {},
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  Container(
+                    child: JDSButton.icon(
+                      variant: Variant.tertiary,
+                      icon: Icon(
+                        Icons.accessibility,
+                        size: 20,
+                        color: JDSColors.green,
+                      ),
+                      background: JDSColors.transparent,
+                      onPressed: () {},
+                      // background: JDSColors.green[700],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           SizedBox(height: 50),
