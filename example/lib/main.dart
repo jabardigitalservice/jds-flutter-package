@@ -40,49 +40,49 @@ class HomePage extends StatelessWidget {
         children: <Widget>[
           Container(
               color: Colors.blue,
-              margin: EdgeInsets.only(top: 10.0),
+              margin: const EdgeInsets.only(top: 10.0),
               child: Text(
                 'Heading 1',
                 style: JDSTextTheme.h1,
               )),
           Container(
               color: Colors.blue,
-              margin: EdgeInsets.only(top: 10.0),
+              margin: const EdgeInsets.only(top: 10.0),
               child: Text(
                 'Heading 2',
                 style: JDSTextTheme.h2,
               )),
           Container(
               color: Colors.blue,
-              margin: EdgeInsets.only(top: 10.0),
+              margin: const EdgeInsets.only(top: 10.0),
               child: Text(
                 'Heading 3',
                 style: JDSTextTheme.h3,
               )),
           Container(
               color: Colors.blue,
-              margin: EdgeInsets.only(top: 10.0),
+              margin: const EdgeInsets.only(top: 10.0),
               child: Text(
                 'Heading 4',
                 style: JDSTextTheme.h4,
               )),
           Container(
               color: Colors.blue,
-              margin: EdgeInsets.only(top: 10.0),
+              margin: const EdgeInsets.only(top: 10.0),
               child: Text(
                 'Heading 5',
                 style: JDSTextTheme.h5,
               )),
           Container(
               color: Colors.blue,
-              margin: EdgeInsets.only(top: 10.0),
+              margin: const EdgeInsets.only(top: 10.0),
               child: Text(
                 'Heading 6',
                 style: JDSTextTheme.h6,
               )),
           Container(
             color: JDSColors.black,
-            margin: EdgeInsets.only(top: 10.0),
+            margin: const EdgeInsets.only(top: 10.0),
             child: RichText(
               text: TextSpan(
                 children: <TextSpan>[
@@ -103,7 +103,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Text(
             'Button filled',
             textAlign: TextAlign.center,
@@ -121,7 +121,7 @@ class HomePage extends StatelessWidget {
                       onPressed: () {},
                     ),
                   ),
-                  SizedBox(width: 10),
+                  const SizedBox(width: 10),
                   Container(
                     child: JDSButton(
                       title: 'danger',
@@ -133,7 +133,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Text(
             'Button Outlined',
             textAlign: TextAlign.center,
@@ -151,7 +151,7 @@ class HomePage extends StatelessWidget {
                       onPressed: () {},
                     ),
                   ),
-                  SizedBox(width: 10),
+                  const SizedBox(width: 10),
                   Container(
                     child: JDSButton.outline(
                       variant: Variant.secondary,
@@ -165,7 +165,7 @@ class HomePage extends StatelessWidget {
                       background: JDSColors.white,
                     ),
                   ),
-                  SizedBox(width: 10),
+                  const SizedBox(width: 10),
                   Container(
                     child: JDSButton.outline(
                       variant: Variant.secondary,
@@ -182,7 +182,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Text(
             'Button icon',
             textAlign: TextAlign.center,
@@ -204,7 +204,7 @@ class HomePage extends StatelessWidget {
                       onPressed: () {},
                     ),
                   ),
-                  SizedBox(width: 10),
+                  const SizedBox(width: 10),
                   Container(
                     child: JDSButton.icon(
                       variant: Variant.danger,
@@ -220,7 +220,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Text(
             'Button Teriary',
             textAlign: TextAlign.center,
@@ -238,7 +238,7 @@ class HomePage extends StatelessWidget {
                       onPressed: () {},
                     ),
                   ),
-                  SizedBox(width: 10),
+                  const SizedBox(width: 10),
                   Container(
                     child: JDSButton.icon(
                       variant: Variant.tertiary,
@@ -255,7 +255,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 50),
+          const SizedBox(height: 50),
         ],
       ),
       drawer: Drawer(
@@ -266,7 +266,7 @@ class HomePage extends StatelessWidget {
           // Important: Remove any padding from the ListView.
           padding: EdgeInsets.zero,
           children: <Widget>[
-            SizedBox(height: 50.0),
+            const SizedBox(height: 50.0),
             ListTile(
               title: Text('Item 1'),
               onTap: () {
