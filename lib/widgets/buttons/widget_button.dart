@@ -11,6 +11,7 @@ class WidgetButton extends StatelessWidget {
     this.variant,
     this.title,
     @required this.onPressed,
+    this.onLongPress,
     this.isEnabled = true,
     this.color = JDSColors.white,
     this.background,
@@ -25,51 +26,59 @@ class WidgetButton extends StatelessWidget {
   final Variant variant;
   final String title;
   final Widget icon;
+
+  ///  * [enabled], which is true if the button is enabled.
   final VoidCallback onPressed;
+
+  ///  * [enabled], which is true if the button is enabled.
+  final VoidCallback onLongPress;
 
   /// default [true]
   final bool isEnabled;
 
-  /// default color [JDSColors.white]
+  /// default text color [JDSColors.white]
   final Color color;
 
-  /// default background [JDSColors.green]
+  /// default background color [JDSColors.green]
   final Color background;
 
+  /// default background color [JDSColors.transparent]
   final Color borderColor;
+
+  /// [Widget] often icon widget in all caps.
   final Widget leading;
   final Widget trailing;
 
   @override
   Widget build(BuildContext context) {
-    TextStyle currentTextStyle = TextStyle(color: color);
-    Color currentBackground = background;
-    Color currentBorderColor = borderColor;
+    TextStyle _currentTextStyle = TextStyle(color: color);
+    Color _currentBackground = background;
+    Color _currentBorderColor = borderColor;
 
-    /// no padding for variant tertiary
+    // no padding for variant tertiary
     EdgeInsetsGeometry padding;
 
-    /// replace default with [type] Variant
+    // replace default theme with [type] Variant
     switch (variant) {
       case Variant.primary:
-        currentTextStyle = TextStyle(color: color ?? JDSColors.white);
-        currentBackground = currentBackground ?? JDSColors.green;
+        _currentTextStyle = TextStyle(color: color ?? JDSColors.white);
+        _currentBackground = _currentBackground ?? JDSColors.green;
         break;
 
       case Variant.danger:
-        currentTextStyle = TextStyle(color: color ?? JDSColors.white);
-        currentBackground = currentBackground ?? JDSColors.red;
+        _currentTextStyle = TextStyle(color: color ?? JDSColors.white);
+        _currentBackground = _currentBackground ?? JDSColors.red;
         break;
 
       case Variant.secondary:
-        currentTextStyle = TextStyle(color: color ?? JDSColors.green);
-        currentBackground = currentBackground ?? JDSColors.green[50];
-        currentBorderColor = JDSColors.green[700];
+        _currentTextStyle = TextStyle(color: color ?? JDSColors.green);
+        _currentBackground = _currentBackground ?? JDSColors.green[50];
+        _currentBorderColor = JDSColors.green[700];
         break;
 
       case Variant.tertiary:
-        currentTextStyle = TextStyle(color: color ?? JDSColors.green);
-        currentBackground = currentBackground ?? JDSColors.green[50];
+        _currentTextStyle = TextStyle(color: color ?? JDSColors.green);
+        _currentBackground = _currentBackground ?? JDSColors.green[50];
         padding = const EdgeInsets.all(0);
         break;
       default:
@@ -77,16 +86,15 @@ class WidgetButton extends StatelessWidget {
 
     return FlatButton(
       key: key,
-      color: currentBackground,
+      color: _currentBackground,
       minWidth: 20,
       padding:
           padding ?? const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
       materialTapTargetSize: MaterialTapTargetSize
           .shrinkWrap, //limits the touch area to the button area
-      onPressed: isEnabled ? onPressed : null,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(8),
-        side: BorderSide(color: currentBorderColor),
+        side: BorderSide(color: _currentBorderColor),
       ),
       child: icon == null
           ? Row(
@@ -99,7 +107,7 @@ class WidgetButton extends StatelessWidget {
                 Text(
                   title,
                   textAlign: TextAlign.center,
-                  style: currentTextStyle.merge(JDSTextTheme.button2
+                  style: _currentTextStyle.merge(JDSTextTheme.button2
                       .copyWith(fontWeight: FontWeight.bold)),
                 ),
                 Padding(
@@ -107,6 +115,8 @@ class WidgetButton extends StatelessWidget {
               ],
             )
           : icon,
+      onPressed: isEnabled ? onPressed : null,
+      onLongPress: onLongPress,
     );
   }
 }

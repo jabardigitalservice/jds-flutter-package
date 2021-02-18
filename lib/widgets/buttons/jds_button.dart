@@ -6,16 +6,13 @@ import 'package:jds_design/widgets/buttons/widget_button.dart';
 
 /// {@tool snippet}
 ///
-/// This example shows a [JDSButton] that is normally white-on-blue,
-///
-/// ![A JDSButton with white text on a green background](https://flutter.github.io/assets-for-api-docs/assets/material/flat_button_properties.png)
+/// This example shows a [JDSButton] that is normally white-on-green
 ///
 /// ```dart
 ///    JDSButton(
 ///      title: 'primary',
+///      variant: Variant.primary,
 ///      onPressed: () {},
-///      color: Colors.white,
-///      background: JDSColors.green[700],
 ///   )
 /// ```
 /// {@end-tool}
