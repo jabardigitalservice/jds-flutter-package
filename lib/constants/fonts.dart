@@ -1,5 +1,4 @@
-class Fonts {
-
+class JDSFonts {
   /// JDS Design System uses 3 Font Types
   /// 2 Sans Serif (Lato and Roboto)
   /// 1 Serif (Lora)
@@ -66,5 +65,4 @@ class Fonts {
   static const String LATO = 'Lato';
   static const String ROBOTO = 'Roboto';
   static const String LORA = 'Lora';
-
 }

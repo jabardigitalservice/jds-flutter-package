@@ -2,6 +2,8 @@
 
 library jds_design;
 
-export 'typography/text_theme.dart';
-export 'enums/font.dart';
-export 'constants/colors.dart';
+/// enum
+export 'enums/variants.dart';
+export 'theme/text_theme.dart';
+export 'theme/colors.dart';
+export 'widgets/buttons/buttons.dart';
