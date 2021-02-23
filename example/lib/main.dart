@@ -255,6 +255,17 @@ class HomePage extends StatelessWidget {
               ),
             ),
           ),
+          const SizedBox(height: 10),
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+              child: JDSInputField(
+                hintText: 'JDSInputField',
+                label: 'label',
+                // prefixIcon: Icons.person,
+              ),
+            ),
+          ),
           const SizedBox(height: 50),
         ],
       ),

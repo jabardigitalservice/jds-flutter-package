@@ -4,6 +4,11 @@ library jds_design;
 
 /// enum
 export 'enums/variants.dart';
+
+/// theme
 export 'theme/text_theme.dart';
 export 'theme/colors.dart';
+
+/// widgets
 export 'widgets/buttons/buttons.dart';
+export 'widgets/inputs/inputs.dart';
