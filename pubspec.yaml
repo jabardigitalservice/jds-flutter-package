@@ -11,6 +11,11 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # This package provides localization 
+  # facilities, including message translation, plurals and genders, 
+  # date/number formatting and parsing, and bidirectional text.
+  intl: ^0.16.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jds_design/jds_design.dart';
+import 'package:jds_design/widgets/inputs/jds_input_field.dart';
 
 class FormInput extends StatefulWidget {
   @override
@@ -16,8 +17,13 @@ class _FormInputState extends State<FormInput> {
           children: [
             JDSInputField(
               hintText: 'Input Field',
-              variant: Variant.primary,
-              prefixIcon: Icons.search,
+              variant: Variant.secondary,
+            ),
+            const SizedBox(height: 12),
+            JDSInputField(
+              hintText: 'Input Field',
+              variant: Variant.danger,
+              inputType: InputType.personName,
               // label: 'label',
               // prefixIcon: Icons.person,
             ),

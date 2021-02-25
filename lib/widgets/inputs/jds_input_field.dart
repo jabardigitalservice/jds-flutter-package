@@ -1,13 +1,10 @@
-// import 'package:facio_design_system/components.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:jds_design/enums/input_type.dart';
 import 'package:jds_design/jds_design.dart';
-
-// import 'masks/currency_mask.dart';
-// import 'masks/magic_mask.dart';
-
-enum InputType { currency, cpf, phone, personName }
+import 'package:jds_design/utils/masks/currency_mask.dart';
+import 'package:jds_design/utils/masks/input_mask.dart';
 
 class JDSInputField extends StatelessWidget {
   const JDSInputField({
@@ -82,7 +79,7 @@ class JDSInputField extends StatelessWidget {
         break;
 
       case Variant.secondary:
-        _color = _borderColor ?? JDSColors.green[50];
+        _color = _borderColor ?? JDSColors.grey;
         break;
 
       default:
@@ -137,6 +134,20 @@ class JDSInputField extends StatelessWidget {
                   ? TextCapitalization.words
                   : TextCapitalization.none,
               keyboardType: keyboardType(),
+              inputFormatters: [
+                FilteringTextInputFormatter.singleLineFormatter,
+                FilteringTextInputFormatter.deny(TextInputMask.emojis),
+                if (_inputFormatters != null) ..._inputFormatters,
+                if (_inputType == InputType.personName)
+                  FilteringTextInputFormatter.deny(TextInputMask.numbers),
+                if (_inputType == InputType.personName)
+                  FilteringTextInputFormatter.deny(TextInputMask.symbols),
+                // if (_inputType == InputType.cpf)
+                //   TextInputMask(mask: '999.999.999-99'),
+                // if (_inputType == InputType.currency) CurrencyMask(),
+                // if (_inputType == InputType.phone)
+                //   TextInputMask(mask: '(99) 9 9999 9999'),
+              ],
               decoration: InputDecoration(
                 isDense: true,
                 // begin:: prefix
@@ -175,7 +186,7 @@ class JDSInputField extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: JDSColors.green),
+                  borderSide: BorderSide(color: _variantColor),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 errorBorder: OutlineInputBorder(

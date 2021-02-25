@@ -3,7 +3,7 @@
 library jds_design;
 
 /// enum
-export 'enums/variants.dart';
+export 'enums/enums.dart';
 
 /// theme
 export 'theme/text_theme.dart';
