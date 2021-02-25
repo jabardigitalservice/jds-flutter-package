@@ -261,7 +261,8 @@ class HomePage extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
               child: JDSInputField(
                 hintText: 'JDSInputField',
-                label: 'label',
+                variant: Variant.primary,
+                // label: 'label',
                 // prefixIcon: Icons.person,
               ),
             ),

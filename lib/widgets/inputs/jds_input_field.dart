@@ -26,6 +26,7 @@ class JDSInputField extends StatelessWidget {
     final String subLabel,
     final Widget hint,
     final IconData prefixIcon,
+    final Color borderColor,
   })  : assert(autofocus != null),
         _key = key,
         _variant = variant,
@@ -42,6 +43,7 @@ class JDSInputField extends StatelessWidget {
         _subLabel = subLabel,
         _hint = hint,
         _prefixIcon = prefixIcon,
+        _borderColor = borderColor,
         super();
 
   final Key _key;
@@ -59,9 +61,34 @@ class JDSInputField extends StatelessWidget {
   final String _subLabel;
   final Widget _hint;
   final IconData _prefixIcon;
+  final Color _borderColor;
 
   bool get _hasHint => _hintText != null && _hintText.isNotEmpty;
   bool get _hasPrefixIcon => _prefixIcon != null;
+
+  Color get _variantColor {
+    Color _color;
+    // replace border color to variant
+    switch (_variant) {
+      case Variant.primary:
+        _color = _borderColor ?? JDSColors.green;
+        break;
+
+      case Variant.danger:
+        _color = _borderColor ?? JDSColors.red;
+        break;
+
+      case Variant.secondary:
+        _color = _borderColor ?? JDSColors.green[50];
+        break;
+
+      default:
+        _color = Colors.grey;
+        break;
+    }
+
+    return _color;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -88,6 +115,7 @@ class JDSInputField extends StatelessWidget {
             ),
           ),
 
+        // box input field
         Container(
           // decoration: BoxDecoration(
           //   border: Border.all(width: 1, color: JDSColors.green),
@@ -106,33 +134,31 @@ class JDSInputField extends StatelessWidget {
                   : TextCapitalization.none,
               keyboardType: keyboardType(),
               decoration: InputDecoration(
-                prefixIcon: _hasPrefixIcon
-                    ? Icon(
-                        _prefixIcon,
-                        color: JDSColors.grey[800],
-                      )
-                    : null,
-                prefixIconConstraints: BoxConstraints(
-                  minWidth: 40,
-                  minHeight: 0,
-                ),
-                // prefixText: 'prefix',
-                // prefixIcon: Icon(Icons.ac_unit_outlined),
-                // prefixText: _inputType == InputType.currency ? 'R\$ ' : '',
+                // prefixIcon: _hasPrefixIcon
+                //     ? Icon(
+                //         _prefixIcon,
+                //         color: JDSColors.grey[800],
+                //       )
+                //     : null,
+                // prefixIconConstraints: BoxConstraints(
+                //   minWidth: 40,
+                //   minHeight: 0,
+                // ),
+                // prefixText: 'Prefix ',
                 prefixStyle: JDSTextTheme.button2,
                 hintText: _hintText,
                 hintStyle: _hasHint ? JDSTextTheme.button2 : null,
                 filled: true,
                 fillColor: Colors.transparent,
-                border: OutlineInputBorder(
-                  borderSide: BorderSide(color: JDSColors.green),
+                // border: OutlineInputBorder(
+                //   borderSide: BorderSide(color: JDSColors.red),
+                //   borderRadius: BorderRadius.circular(8),
+                // ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: _variantColor),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: JDSColors.green),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(color: JDSColors.green),
                   borderRadius: BorderRadius.circular(8),
                 ),
