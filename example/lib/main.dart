@@ -1,3 +1,4 @@
+import 'package:example/form.dart';
 import 'package:flutter/material.dart';
 import 'package:jds_design/jds_design.dart';
 
@@ -256,17 +257,7 @@ class HomePage extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 10),
-          Center(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-              child: JDSInputField(
-                hintText: 'JDSInputField',
-                variant: Variant.primary,
-                // label: 'label',
-                // prefixIcon: Icons.person,
-              ),
-            ),
-          ),
+          FormInput(),
           const SizedBox(height: 50),
         ],
       ),

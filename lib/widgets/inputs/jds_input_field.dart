@@ -17,6 +17,7 @@ class JDSInputField extends StatelessWidget {
     final FocusNode focusNode,
     final bool autofocus = false,
     final bool capitalize = false,
+    final bool obscureText = false,
     final TextEditingController controller,
     final List<TextInputFormatter> inputFormatters,
     final TextInputType keyboardType,
@@ -31,6 +32,7 @@ class JDSInputField extends StatelessWidget {
         _key = key,
         _variant = variant,
         _autofocus = autofocus,
+        _obscureText = obscureText,
         _controller = controller,
         _focusNode = focusNode,
         _hintText = hintText,
@@ -49,6 +51,7 @@ class JDSInputField extends StatelessWidget {
   final Key _key;
   final Variant _variant;
   final bool _autofocus;
+  final bool _obscureText;
   final TextEditingController _controller;
   final void Function(String) _onChanged;
   final String _hintText;
@@ -129,31 +132,44 @@ class JDSInputField extends StatelessWidget {
               controller: _controller,
               onChanged: _onChanged,
               autocorrect: false,
+              obscureText: _obscureText,
               textCapitalization: _capitalize
                   ? TextCapitalization.words
                   : TextCapitalization.none,
               keyboardType: keyboardType(),
               decoration: InputDecoration(
-                // prefixIcon: _hasPrefixIcon
-                //     ? Icon(
-                //         _prefixIcon,
-                //         color: JDSColors.grey[800],
-                //       )
-                //     : null,
-                // prefixIconConstraints: BoxConstraints(
-                //   minWidth: 40,
-                //   minHeight: 0,
-                // ),
+                isDense: true,
+                // begin:: prefix
+                prefixIcon: _hasPrefixIcon
+                    ? Icon(
+                        _prefixIcon,
+                        color: JDSColors.grey[800],
+                        size: 16,
+                      )
+                    : null,
+                prefixIconConstraints: BoxConstraints(
+                  minWidth: 30,
+                ),
                 // prefixText: 'Prefix ',
                 prefixStyle: JDSTextTheme.button2,
+                // end:: prefix
+
+                // begin:: suffix
+                suffixIcon: Icon(
+                  Icons.person,
+                  color: JDSColors.grey[800],
+                  size: 16,
+                ),
+                suffixIconConstraints: BoxConstraints(
+                  minWidth: 30,
+                ),
+                suffixStyle: JDSTextTheme.button2,
+                // end:: suffix
+
                 hintText: _hintText,
                 hintStyle: _hasHint ? JDSTextTheme.button2 : null,
                 filled: true,
                 fillColor: Colors.transparent,
-                // border: OutlineInputBorder(
-                //   borderSide: BorderSide(color: JDSColors.red),
-                //   borderRadius: BorderRadius.circular(8),
-                // ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(color: _variantColor),
                   borderRadius: BorderRadius.circular(8),
@@ -166,6 +182,7 @@ class JDSInputField extends StatelessWidget {
                   borderSide: BorderSide(color: JDSColors.red),
                   borderRadius: BorderRadius.circular(8),
                 ),
+
                 contentPadding: const EdgeInsets.only(
                   left: 8,
                   bottom: 11,
@@ -176,7 +193,6 @@ class JDSInputField extends StatelessWidget {
               ),
               textAlign: TextAlign.left,
               style: JDSTextTheme.button2,
-              cursorColor: Colors.black54,
             ),
           ),
         ),
