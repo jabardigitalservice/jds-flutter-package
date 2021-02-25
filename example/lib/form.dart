@@ -23,7 +23,7 @@ class _FormInputState extends State<FormInput> {
             JDSInputField(
               hintText: 'Input Field',
               variant: Variant.danger,
-              inputType: InputType.personName,
+              inputType: InputType.currency,
               // label: 'label',
               // prefixIcon: Icons.person,
             ),

@@ -144,7 +144,7 @@ class JDSInputField extends StatelessWidget {
                   FilteringTextInputFormatter.deny(TextInputMask.symbols),
                 // if (_inputType == InputType.cpf)
                 //   TextInputMask(mask: '999.999.999-99'),
-                // if (_inputType == InputType.currency) CurrencyMask(),
+                if (_inputType == InputType.currency) CurrencyMask(),
                 // if (_inputType == InputType.phone)
                 //   TextInputMask(mask: '(99) 9 9999 9999'),
               ],
