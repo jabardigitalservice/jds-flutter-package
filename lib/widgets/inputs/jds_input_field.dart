@@ -23,6 +23,7 @@ class JDSInputField extends StatelessWidget {
     final String label,
     final String subLabel,
     final Widget hint,
+    final Widget prefix,
     final IconData prefixIcon,
     final Color borderColor,
   })  : assert(autofocus != null),
@@ -41,6 +42,7 @@ class JDSInputField extends StatelessWidget {
         _label = label,
         _subLabel = subLabel,
         _hint = hint,
+        _prefix = prefix,
         _prefixIcon = prefixIcon,
         _borderColor = borderColor,
         super();
@@ -60,10 +62,12 @@ class JDSInputField extends StatelessWidget {
   final String _label;
   final String _subLabel;
   final Widget _hint;
+  final Widget _prefix;
   final IconData _prefixIcon;
   final Color _borderColor;
 
   bool get _hasHint => _hintText != null && _hintText.isNotEmpty;
+  bool get _hasPrefix => _prefix != null;
   bool get _hasPrefixIcon => _prefixIcon != null;
 
   Color get _variantColor {
@@ -151,6 +155,7 @@ class JDSInputField extends StatelessWidget {
               decoration: InputDecoration(
                 isDense: true,
                 // begin:: prefix
+                prefix: _hasPrefix ? _prefix : null,
                 prefixIcon: _hasPrefixIcon
                     ? Icon(
                         _prefixIcon,
@@ -166,11 +171,12 @@ class JDSInputField extends StatelessWidget {
                 // end:: prefix
 
                 // begin:: suffix
-                suffixIcon: Icon(
-                  Icons.person,
-                  color: JDSColors.grey[800],
-                  size: 16,
-                ),
+                suffix: Text('test prefix '),
+                // suffixIcon: Icon(
+                //   Icons.person,
+                //   color: JDSColors.grey[800],
+                //   size: 16,
+                // ),
                 suffixIconConstraints: BoxConstraints(
                   minWidth: 30,
                 ),
